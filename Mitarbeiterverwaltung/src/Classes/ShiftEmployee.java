@@ -14,18 +14,27 @@ public class ShiftEmployee extends Employee {
     }
 
     @Override
-    protected Employee setId(int id) throws IdTooLongException {
-        if (id > 999){
-            throw new IdTooLongException("Shift Employees Can Only Have IDs Varying In 3 Digits");
-        }
+    protected void setId(int id) throws IdTooLongException {
+        if (id >= 3000 && id <= 3999) {
+            super.setId(id);
+          } else {
+            throw new IllegalArgumentException("Shiftworkers ID's must lie between 3000 und 3999");
+          }
         this.id = Numbers.prependNumber(id, 3);
-        return this;
     }
 
     @Override
     public int getId() {
         return this.id;
     }
+
+    public void arbeite(int std) {
+        if (std >= 0) {
+          this.setHoursWorked(this.hoursWorked+ std);
+        } else {
+          throw new IllegalArgumentException("Die Anzahl zu arbeitender Stunden muss >= 0 sein.");
+        }
+      }
 
     public ShiftEmployee setHoursWorked (int hoursWorked){
         this.hoursWorked = hoursWorked;
