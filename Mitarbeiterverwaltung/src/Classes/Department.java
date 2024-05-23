@@ -1,9 +1,5 @@
 package Classes;
 
-import Classes.Employee;
-import Classes.Manager;
-import Classes.ShiftEmployee;
-import Classes.OfficeEmployee;
 import Exceptions.ManagerCannotBeNullException;
 
 import java.util.*;
@@ -12,6 +8,7 @@ public class Department {
     private String name;
     private Manager manager;
     private TreeMap <Integer, Employee> listEmployee;
+    @SuppressWarnings("unused")
     private TreeSet<Employee> treeEmployee;
 
     public Department (String name, Manager manager) throws ManagerCannotBeNullException {
@@ -67,7 +64,6 @@ public class Department {
     }
 
     public String getLoanList (){
-        int count = 0;
         double overallIncome = 0.0;
         StringBuilder loanOverview = new StringBuilder();
 

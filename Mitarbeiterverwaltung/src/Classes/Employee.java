@@ -6,6 +6,7 @@ import Utils.Numbers;
 import java.util.Comparator;
 
 public abstract class Employee implements Comparable<String> {
+    @SuppressWarnings("unused")
     private int id;
     private String name;
 
@@ -39,8 +40,6 @@ public abstract class Employee implements Comparable<String> {
 
     public abstract double getIncome();
 
-    
-    @Override
     public int compareTo (Employee other) {
       return this.getName().compareTo(other.getName());
     }

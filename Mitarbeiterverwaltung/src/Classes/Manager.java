@@ -9,28 +9,29 @@ public class Manager extends Employee {
     private double bonus;
     private double fixedIncome;
 
-    public Manager (int id, String name, double fixedIncome, double bonus) throws IdTooLongException {
+    public Manager(int id, String name, double fixedIncome, double bonus) throws IdTooLongException {
         super(id, name);
         setIncome(fixedIncome).setBonus(bonus);
     }
 
-    public Manager setIncome(double fixedIncome){
+    public Manager setIncome(double fixedIncome) {
         this.fixedIncome = fixedIncome;
         return this;
     }
-    @Override
-    public double getIncome() {
+
+    public double getFixedIncome() {
         return fixedIncome;
     }
-
-    public void setBonus (double bonus){
+    
+    public void setBonus(double bonus) {
         if (bonus >= 0 && bonus <= 2) {
             this.bonus = bonus;
-          } else {
+        } else {
             throw new IllegalArgumentException("Bonus muss zwischen 0 und 200% liegen.");
-          }
+        }
     }
-    public double getBonus(){
+
+    public double getBonus() {
         return this.bonus;
     }
 
@@ -38,10 +39,10 @@ public class Manager extends Employee {
     protected void setId(int id) throws IdTooLongException {
         if (id >= 5000 && id <= 5099) {
             super.setId(id);
-          } else {
+        } else {
             throw new IllegalArgumentException("Manager IDs must lie between 5000 und 5099");
-          }
-          this.id = Numbers.prependNumber(id, 5);
+        }
+        this.id = Numbers.prependNumber(id, 5);
     }
 
     @Override
@@ -49,7 +50,7 @@ public class Manager extends Employee {
         return this.id;
     }
 
-    public double calcBonus (){
+    public double calcBonus() {
         return this.fixedIncome + (this.fixedIncome / this.bonus);
     }
 
@@ -60,11 +61,12 @@ public class Manager extends Employee {
 
     @Override
     public double getIncome() {
-      return getIncome() + calcBonus();
+        return getIncome() + calcBonus();
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         return super.toString() + "Bonus: " + "Total Income: " + getIncome();
     }
+
 }
