@@ -1,6 +1,8 @@
 package Classes;
 
 import Exceptions.ManagerCannotBeNullException;
+import ReadWrite.Reader;
+import ReadWrite.Writer;
 
 import java.util.*;
 
@@ -8,8 +10,9 @@ public class Department {
     private String name;
     private Manager manager;
     private TreeMap <Integer, Employee> listEmployee;
-    @SuppressWarnings("unused")
     private TreeSet<Employee> treeEmployee;
+    Writer writer = new Writer();
+    Reader reader = new Reader();
 
     public Department (String name, Manager manager) throws ManagerCannotBeNullException {
         listEmployee = new TreeMap<>();
@@ -33,11 +36,9 @@ public class Department {
         return this.listEmployee;
     }
 
-//    public Employee findEmployee (int employeeID){
-//        Employee unknown;
-//
-//        return unknown;
-//    }
+   public Employee findEmployee (int employeeID){
+        return this.listEmployee.get(employeeID);
+    }
 
     public Department addEmployee (Employee addEmployee){
         this.listEmployee.put(addEmployee.getId(), addEmployee);
@@ -81,6 +82,10 @@ public class Department {
         loanOverview.append("[ Overall Income ]: \t").append(overallIncome);
 
         return loanOverview.toString();
+    }
+
+    public void EmployeeExport () {
+        writer.writeAll(listEmployee);
     }
 
 

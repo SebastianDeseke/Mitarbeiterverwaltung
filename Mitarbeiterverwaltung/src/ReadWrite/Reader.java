@@ -11,10 +11,28 @@ public class Reader {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
+            String[] list;
             while ((line = reader.readLine()) != null) {
-
+                list = line.split(",");
             }
+            reader.close();
+        } catch (Exception e) {
+            System.out.println("An error has occured: " + e);
+            e.printStackTrace();
+        }
+    }
 
+    public void ReadEmployee(int id) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+            String[] list;
+            while ((line = reader.readLine()) != null) {
+                list = line.split(",");
+                if (Integer.parseInt(list[0]) == id) {
+                    System.out.println("ID: " + list[0] + " Name: " + list[1] + " Income: " + list[2]);
+                }
+            }
             reader.close();
         } catch (Exception e) {
             System.out.println("An error has occured: " + e);
