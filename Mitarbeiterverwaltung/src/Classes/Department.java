@@ -10,7 +10,6 @@ public class Department {
     private String name;
     private Manager manager;
     private TreeMap <Integer, Employee> listEmployee;
-    private TreeSet<Employee> treeEmployee;
     Writer writer = new Writer();
     Reader reader = new Reader();
 

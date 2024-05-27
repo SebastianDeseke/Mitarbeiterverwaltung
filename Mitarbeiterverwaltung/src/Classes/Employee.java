@@ -1,7 +1,6 @@
 package Classes;
 
 import Exceptions.IdTooLongException;
-import Utils.Numbers;
 
 import java.util.Comparator;
 
@@ -23,9 +22,8 @@ public abstract class Employee implements Comparable<String> {
         if (id > 999 && id < 10000) {
           this.id = id;
         } else {
-          throw new IdTooLongException("id ist nicht im g�ltigen Bereich");
+          throw new IdTooLongException("ID is not in a valid range.");
         }
-        this.id = Numbers.prependNumber(id, 5);
       }
     public abstract int getId();
 

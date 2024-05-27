@@ -37,12 +37,13 @@ public class Manager extends Employee {
 
     @Override
     protected void setId(int id) throws IdTooLongException {
-        if (id >= 5000 && id <= 5099) {
-            super.setId(id);
+        //idt = id transformed
+        int idt = Numbers.prependNumber(id, 5);
+        if (idt >= 5000 && idt <= 5099) {
+            super.setId(idt);
         } else {
             throw new IllegalArgumentException("Manager IDs must lie between 5000 und 5099");
         }
-        this.id = Numbers.prependNumber(id, 5);
     }
 
     @Override

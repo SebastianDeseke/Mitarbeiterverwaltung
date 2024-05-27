@@ -14,6 +14,7 @@ public class Reader {
             String[] list;
             while ((line = reader.readLine()) != null) {
                 list = line.split(",");
+                System.out.println("ID: " + list[0] + " Name: " + list[1] + " Income: " + list[2]);
             }
             reader.close();
         } catch (Exception e) {

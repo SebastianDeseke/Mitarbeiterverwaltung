@@ -18,7 +18,7 @@ public class OfficeEmployee extends Employee {
         if(999 < id){
             throw new IdTooLongException("Office Employees Can Only Have IDs Varying In 3 Digits");
         }
-        this.id = Numbers.prependNumber(id, 5);
+        this.id = Numbers.prependNumber(id, 2);
     }
 
 
