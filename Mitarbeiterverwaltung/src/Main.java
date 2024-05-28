@@ -16,9 +16,9 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             System.out.println("[+] [ Running tests ] ...\n");
 
-            System.out.println("\n[+] [ Creating valid manager ] ...\n");
+            System.out.println("[+] [ Creating valid manager ] ...\n");
 
-            Manager manager = new Manager(69, "Sebastian", 100, 10);
+            Manager manager = new Manager(69, "Sebastian", 1000, 10);
 
             System.out.println("[+] [ Accessing getters ] ...\n");
 

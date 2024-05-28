@@ -21,16 +21,15 @@ public class OfficeEmployee extends Employee {
         this.id = Numbers.prependNumber(id, 2);
     }
 
-
-
-    public int getId(){
+    public int getId() {
         return this.id;
     }
 
-    public OfficeEmployee setIncome(double fixedIncome){
+    public OfficeEmployee setIncome(double fixedIncome) {
         this.fixedIncome = fixedIncome;
         return this;
     }
+
     @Override
     public double getIncome() {
         return fixedIncome;

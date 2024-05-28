@@ -24,7 +24,7 @@ public class Manager extends Employee {
     }
     
     public void setBonus(double bonus) {
-        if (bonus >= 0 && bonus <= 2) {
+        if (bonus >= 0 && bonus <= 200) {
             this.bonus = bonus;
         } else {
             throw new IllegalArgumentException("Bonus muss zwischen 0 und 200% liegen.");
@@ -37,13 +37,10 @@ public class Manager extends Employee {
 
     @Override
     protected void setId(int id) throws IdTooLongException {
-        //idt = id transformed
-        int idt = Numbers.prependNumber(id, 5);
-        if (idt >= 5000 && idt <= 5099) {
-            super.setId(idt);
-        } else {
-            throw new IllegalArgumentException("Manager IDs must lie between 5000 und 5099");
+        if(999 < id){
+            throw new IdTooLongException("Managers Can Only Have IDs Varying In 3 Digits");
         }
+        this.id = Numbers.prependNumber(id, 5);
     }
 
     @Override
@@ -57,12 +54,12 @@ public class Manager extends Employee {
 
     @Override
     public int compareTo(String o) {
-        return 0;
+        return this.getName().compareTo(o);
     }
 
     @Override
     public double getIncome() {
-        return getIncome() + calcBonus();
+        return fixedIncome + calcBonus();
     }
 
     @Override
