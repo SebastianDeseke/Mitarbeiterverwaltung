@@ -33,12 +33,12 @@ public class Main {
 
             System.out.println("\n[+] [ Creating valid department ] ...\n");
 
-            Department department = new Department("Sebastians Department", manager);
+            Department department = new Department("Killians Department", manager);
 
             System.out.println("[+] [ Adding office employee ] ...");
-            OfficeEmployee dummyOffice = new OfficeEmployee(145, "Aaron", 1000);
+            OfficeEmployee dummyOffice = new OfficeEmployee(145, "Dilaksan", 1000);
             System.out.println("[+] [ Adding shift employee ] ...\n");
-            ShiftEmployee dummyShift = new ShiftEmployee(145, "Julius", 10);
+            ShiftEmployee dummyShift = new ShiftEmployee(145, "Sebo", 10);
             dummyShift.setHoursWorked(40);
 
             department.addEmployee(dummyOffice).addEmployee(dummyShift);
