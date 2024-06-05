@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 
 public class Reader {
-    File file = new File("Employees.csv");
+    File file = new File("Files/Employees.csv");
 
     public void ReadAll() {
         try {

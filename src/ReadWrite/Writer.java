@@ -8,7 +8,7 @@ import java.util.TreeMap;
 import Classes.Employee;
 
 public class Writer {
-    File file = new File("Employees.csv");
+    File file = new File("Files/Employees.csv");
 
     public void writeAll(TreeMap <Integer, Employee> listEmployee) {
         //check if csv filename already exists. if yes override, if not make new.
