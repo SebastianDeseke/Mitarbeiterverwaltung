@@ -26,9 +26,9 @@ public class ShiftEmployee extends Employee {
         return this.id;
     }
 
-    public void arbeite(int std) {
-        if (std >= 0) {
-            this.setHoursWorked(this.hoursWorked + std);
+    public void work(int hrs) {
+        if (hrs >= 0) {
+            this.setHoursWorked(this.hoursWorked + hrs);
         } else {
             throw new IllegalArgumentException("Die Anzahl zu arbeitender Stunden muss >= 0 sein.");
         }

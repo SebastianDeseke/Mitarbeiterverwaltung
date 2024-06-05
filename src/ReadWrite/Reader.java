@@ -14,7 +14,14 @@ public class Reader {
             String[] list;
             while ((line = reader.readLine()) != null) {
                 list = line.split(",");
-                System.out.println("ID: " + list[0] + " Name: " + list[1] + " Income: " + list[2]);
+                /*maybe there is a way to assign the values to the correct class, depending on the starting number of the ID */
+                int id = Integer.parseInt(list[0]);
+                String name = list[1];
+                double income = Double.parseDouble(list[2]);
+                int hours = Integer.parseInt(list[3]);
+                double bonus = Double.parseDouble(list[4]);
+                /*save as Map or TreeSet and then return that */
+                
             }
             reader.close();
         } catch (Exception e) {
